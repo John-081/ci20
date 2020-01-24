@@ -234,11 +234,12 @@ iframe {
   }
   .container8 {
     width: 100%;
+    height:50px;
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 10px;
+    margin-top: 740px;
   }
   .container9 {
     width: 100%;
@@ -247,6 +248,15 @@ iframe {
     justify-content: center;
     align-items: center;
     margin-top: 140px;
+  }
+  .container10 {
+    width: 100%;
+    height:20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 780px;
   }
 
   .resize1{
@@ -285,6 +295,9 @@ iframe {
   .resize9{
     width: 25px;
     margin-bottom: 10px;
+  }
+  .resize10{
+    width: 25px;
   }
   .resize6,
   .resize7,
