@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    div {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      float: left;
+    }
+    .row1 {
+      height: 75%;
+    }
+    .row2 {
+      height: 25%;
+    }
+    .row3 {
+      height: 40%;
+    }
+    .row4 {
+      height: 50%;
+    }
+    .row5 {
+      height: 60%;
+    }
+    .colums1 {
+      width: 20%;
+    }
+    .colums2 {
+      width: 80%;
+    }
+    .colums3 {
+      width: 10%;
+    }
+    .colums4 {
+      width: 90%;
+    }
+    .blue {
+      background-color: blue;
+    }
+    .red {
+      background-color: red;
+    }
+    .yellow {
+      background-color: yellow;
+    }
+    .white {
+      background-color: white;
+    }
+    .border1 {
+      border-top: 30px solid black;
+    }
+    .border2 {
+      border-bottom: 30px solid black;
+    }
+    .border3 {
+      border-left: 30px solid black;
+    }
+  </style>
+
+  <body>
+    <div class="colums1">
+      <div class="row1">
+        <div class="row3 white border2">
+        </div>
+        <div class="row5 white border1">
+        </div>
+      </div>
+      <div class="row2 blue border1">
+      </div>
+    </div>
+    <div class="colums2 border3">
+      <div class="row1 red">
+      </div>
+      <div class="row2 yellow">
+        <div class="colums4 white border1">
+        </div>
+        <div class="colums3 yellow border1 border3">
+          <div class="row4 white border2">
+          </div>
+          <div class="row4 border1">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
