@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewpoint" content="initial-scale=1">
+    <title></title>
+  <style media="screen">
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+    div {
+      flex: 1;
+    }
+    div:nth-of-type(even) {
+      background-color: sienna;
+    }
+    div:nth-of-type(odd) {
+      background-color: chocolate;
+      flex: 2;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        flex-direction: column;
+      }
+      /*more css goes here*/
+      /*if the above statement is true it will apply these styles*/
+    }
+
+    @media (hover: none) {
+      div:nth-of-type(even) {
+        background-color: brown;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div class="">
+
+    </div>
+    <div class="">
+
+    </div>
+    <div class="">
+
+    </div>
+    <div class="">
+
+    </div>
+  </body>
+</html>
