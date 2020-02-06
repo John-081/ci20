@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style>
+
+  html, body {
+    height: 100%; margin: 0;
+  }
+  div {
+    height: 100%;
+  }
+  .blue {
+     background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+
+.shrink-height {
+  animation: shrinkHeight 1s linear 0s 1 normal forwards;
+}
+
+@keyframes shrinkHeight {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 50%;
+  }
+}
+
+@keyframes expandHeight {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 50%;
+  }
+}
+</style>
+  </head>
+  <body>
+
+    <div id="first" class="blue">
+      <button id="button-1"> press</button>
+</div>
+
+<div id="second" class="yellow"></div>
+
+
+<script>
+
+  //"word" + " word"
+  //"word word"
+
+  document.getElementById("button-1").onclick = function() {
+    document.getElementById("first").className = document.getElementById("first").className + " shrink-height";
+    document.getElementById("second").className = document.getElementById("second").className + " expand-height";
+  };
+
+  document.getElementById("button-2").onclick = function() {
+    document.getElementById("button-2").className = document.getElementById("button-2").className + " flex-grow-larger";
+    document.getElementById("second").className = document.getElementById("second").className + " expand-height";
+  };
+
+</script>
+
+  </body>
+</html>

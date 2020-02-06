@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #0b59b5;
+    }
+    .container {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      margin-top: 100px;
+    }
+    div {
+      height: 100%;
+      width: 25%;
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+    }
+    .blue, .red, .grey, .brown {
+      margin-left: 4%;
+      opacity: .6;
+    }
+    .blue {
+       background-color: #649ca9;
+    }
+    .red {
+      background-color: #c9596f;
+    }
+    .black {
+      background-color: #424451;
+      height: 150%;
+      width: 50%;
+      margin-left: 20%;
+    }
+    .grey {
+      background-color: #c6a136;
+    }
+    .brown {
+      background-color: #9262d7;
+    }
+    .logo {
+      background-color: #0b59b5;
+      position: fixed;
+      width: 20vw;
+      z-index: 1;
+    }
+    h1, h2, p {
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1 {
+      color: white;
+      font-size: 1.5vw;
+      margin-top: 50%;
+      text-align: center;
+    }
+    h2 {
+      color: white;
+      font-size: 1vw;
+      margin-top: 50%;
+      opacity: 0;
+    }
+    h3 {
+      font-family: 'power_symbols';
+    }
+    p {
+      color: white;
+      font-size: 1.5vw;
+      margin-top: 50%;
+      margin-left: 2%;
+      margin-right: 2%;
+      opacity: 0;
+      text-align: center;
+      z-index: 2;
+    }
+    #button-2, #button-3, #button-4, #button-5 {
+      opacity: 0;
+    }
+    #button-01, #button-02, #button-03, #button-04, #button-05 {
+      display: none;
+    }
+    .button:active {
+      opacity: .6
+    }
+    .resize1 {
+      width: 100%;
+      margin-top: 20%
+    }
+    .resize2 {
+      width: 30%;
+      margin-top: 0%;
+      opacity: 0;
+      float: right;
+      display: inline;
+      margin-right: 7%
+    }
+    .resize4 {
+      display: none;
+    }
+  .move-left {
+    animation: moveLeft 1s;
+    animation-fill-mode: forwards;
+  }
+  .move-left2 {
+    animation: moveLeft2 1s;
+    animation-fill-mode: forwards;
+  }
+  .move-left3 {
+    animation: moveLeft3 1s;
+    animation-fill-mode: forwards;
+  }
+  .move-left4 {
+    animation: moveLeft4 1s;
+    animation-fill-mode: forwards;
+  }
+  .move-back {
+    animation: moveBack 1s;
+    animation-fill-mode: forwards;
+  }
+  .get-larger {
+    animation: getLarger 1s;
+    animation-fill-mode: forwards;
+  }
+  .get-smaller {
+    animation: getSmaller 1s;
+    animation-fill-mode: forwards;
+  }
+  .text-larger {
+    animation: textLarger 1s;
+    animation-fill-mode: forwards;
+  }
+  .text-smaller {
+    animation: textSmaller 1s;
+    animation-fill-mode: forwards;
+  }
+  .p-larger {
+    animation: pLarger 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+  }
+  .p-smaller {
+    animation: pSmaller .5s;
+    animation-fill-mode: forwards;
+  }
+  .fade-in {
+    animation: Fadein 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+  }
+  .fade-out {
+    animation: Fadeout .5s;
+    animation-fill-mode: forwards;
+  }
+  .ps4-fade-in {
+    animation: ps4Fadein 6s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes moveLeft {
+    0% {margin-left: 0%;}
+    100% {margin-left: -15%;}
+  }
+  @keyframes moveLeft2 {
+    0% {margin-left: -15%;}
+    100% {margin-left: -29%;}
+  }
+  @keyframes moveLeft3 {
+    0% {margin-left: -29%;}
+    100% {margin-left: -43%;}
+  }
+  @keyframes moveLeft4 {
+    0% {margin-left: -43%;}
+    100% {margin-left: -58%;}
+  }
+  @keyframes moveBack {
+    0% {margin-left: -60%;}
+    100% {margin-left: 0%;}
+  }
+  @keyframes getLarger {
+    0% {height: 100%; width: 25%; opacity: 0.6;}
+    100% {height: 150%; width: 50%; opacity: 1;}
+  }
+  @keyframes getSmaller {
+    0% {height: 150%; width: 50%; opacity: 1;}
+    100% {height: 100%; width: 25%; opacity: 0.6;}
+  }
+  @keyframes textLarger {
+    0% {font-size: 1vw; opacity: 0;}
+    100% {font-size: 1.6vw; opacity: 1;}
+  }
+  @keyframes textSmaller {
+    0% {font-size: 1.6vw; opacity: 1;}
+    100% {font-size: 0vw; opacity: 0;}
+  }
+  @keyframes pLarger {
+    0% {opacity: 0; margin-top: -5%;}
+    100% {opacity: 1; margin-top: 30%;}
+  }
+  @keyframes pSmaller {
+    0% {opacity: 1; margin-top: 30%;}
+    100% {opacity: 0; margin-top: -5%;}
+  }
+  @keyframes Fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @keyframes Fadeout {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @keyframes ps4Fadein {
+    0% {opacity: 0; margin-top: 0%; }
+    70% {opacity: 0; margin-top: 15%; }
+    100% {opacity: 1; margin-top: 20%; }
+  }
+
+
+  @media only screen and (max-width: 700px) {
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #0b59b5;
+      overflow: hidden;
+    }
+    .container {
+      width: 100%;
+      height: 500%;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      text-align: center;
+    }
+    .logo {
+      background-color: #0b59b5;
+      /* background-color: white; */
+      margin: 0%;
+      padding-top: 3%;
+      width: 100%;
+      height: 15%;
+      opacity: 1;
+      position: fixed;
+      z-index: 1;
+    }
+    h1 {
+      margin: 0px;
+      font-size: 5vw;
+      margin-top: 50vw;
+    }
+    h2 {
+      margin: 0px;
+      margin-top: 50vw;
+      font-size: 1vw;
+    }
+    p {
+      margin: 0px;
+      font-size: 4vw;
+      margin-left: 10vw;
+      margin-right: 10vw;
+    }
+    div {
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .black, .blue, .red, .grey, .brown {
+      margin: 0%;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      position: relative;
+    }
+    #button-1, #button-2, #button-3, #button-4 {
+      display: none;
+    }
+    #button-01, #button-02, #button-03, #button-04, #button-05 {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 12%;
+      text-align: center;
+      bottom: 0;
+      background-color: #0b59b5;
+      border: 0;
+      opacity: 0;
+    }
+    .resize1 {
+      display: none;
+    }
+    .resize2 {
+      display: none;
+    }
+    .resize3 {
+      height: 50%;
+    }
+    .resize4 {
+      width: 33%;
+      display: block;
+      background-color: #0b59b5
+    }
+    .move-up1 {
+      animation: moveUP1 1s;
+      animation-fill-mode: forwards;
+    }
+    .move-up2 {
+      animation: moveUP2 1s;
+      animation-fill-mode: forwards;
+    }
+    .move-up3 {
+      animation: moveUP3 1s;
+      animation-fill-mode: forwards;
+    }
+    .move-up4 {
+      animation: moveUP4 1s;
+      animation-fill-mode: forwards;
+    }
+    .text-larger {
+      animation: textLarger 1s;
+      animation-fill-mode: forwards;
+    }
+    .fade-in2 {
+      animation: Fadein2 2s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+    @keyframes moveUP1 {
+      0% {-webkit-transform: translate(0, 0); }
+      100% {-webkit-transform: translate(0, -20%);}
+    }
+    @keyframes moveUP2 {
+      0% {-webkit-transform: translate(0, -20%); }
+      100% {-webkit-transform: translate(0, -40%);}
+    }
+    @keyframes moveUP3 {
+      0% {-webkit-transform: translate(0, -40%); }
+      100% {-webkit-transform: translate(0, -60%);}
+    }
+    @keyframes moveUP4 {
+      0% {-webkit-transform: translate(0, -60%); }
+      100% {-webkit-transform: translate(0, -80%);}
+    }
+    @keyframes textLarger {
+      0% {font-size: 1vw; opacity: 0;}
+      100% {font-size: 5vw; opacity: 1;}
+    }
+    @keyframes Fadein2 {
+      0% {opacity: 0}
+      100% {opacity: 1}
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="logo">
+    <audio id="audio" src="music.mp3"></audio>
+    <img class="resize1" src="logo.gif">
+    <div class="resize4"></div>
+    <img class="resize4" src="logo2.gif">
+  </div>
+  <div id="Container" class="container">
+    <div id="lack" class="black">
+      <h1 id="topic">PS4 MANUAL</h1>
+      <button id="button-1">&#9654;	</button>
+      <span class="button"><button class="fade-in2 button" id="button-01"><img class="resize3" src="triangle.png"></button>
+      </span>
+    </div>
+    <div id="rey" class="grey">
+      <h2 id="step1">1. TURN ON YOUR PS4</h2>
+      <p id="step01">Find the power switch on your PS4. Press on it.</p>
+      <button id="button-2">&#9654;</button>
+      <span class="button"><button id="button-02"><img class="resize3" src="triangle.png"></button>
+      </span>
+    </div>
+    <div id="ed" class="red">
+      <h2 id="step2">2. CONNECT YOUR CONTROLLER</h2>
+      <p id="step02">Find the PS4 logo on your controller. Press on it.</p>
+      <button id="button-3">&#9654;	</button>
+      <span class="button"><button id="button-03"><img class="resize3" src="triangle.png"></button>
+      </span>
+    </div>
+    <div id="lue" class="blue">
+      <h2 id="step3">3. CHOOSE YOUR GAME</h2>
+      <p id="step03">Use the directional buttons on your controller to select your game on PS4 menu.</p>
+      <button id="button-4">&#9654;	</button>
+      <span class="button"><button id="button-04"><img class="resize3" src="triangle.png"></button>
+      </span>
+    </div>
+    <div id="rown" class="brown">
+      <h2 id="step4">PLAY TIME!</h2>
+      <p id="step04">Use the x buttons on your controller to comfirm the game you selected.</p>
+      <button id="button-5" onClick="window.location.reload();">&#x21A9;</button>
+      <span class="button"><button id="button-05" onClick="window.location.reload();"><img class="resize3" src="triangle2.png"></button>
+      </span>
+    </div>
+  </div>
+    <img id="ps4" class="resize2" src="logo.png">
+
+  <script>
+    document.getElementById("button-1").onclick = function() {
+      document.getElementById("rey").className = document.getElementById("rey").className + " get-larger";
+      document.getElementById("lack").className = document.getElementById("lack").className + " get-smaller";
+      document.getElementById("step1").className = document.getElementById("step1").className + " text-larger";
+      document.getElementById("step01").className = document.getElementById("step01").className + " p-larger";
+      document.getElementById("topic").className = document.getElementById("topic").className + " text-smaller";
+      document.getElementById("button-1").className = document.getElementById("button-1").className + " fade-out";
+      document.getElementById("button-2").className = document.getElementById("button-2").className + " fade-in";
+    };
+    document.getElementById("button-2").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-left";
+      document.getElementById("rey").className = document.getElementById("rey").className + " get-smaller";
+      document.getElementById("ed").className = document.getElementById("ed").className + " get-larger";
+      document.getElementById("step2").className = document.getElementById("step2").className + " text-larger";
+      document.getElementById("step1").className = document.getElementById("step1").className + " text-smaller";
+      document.getElementById("step01").className = document.getElementById("step01").className + " p-smaller";
+      document.getElementById("step02").className = document.getElementById("step02").className + " p-larger";
+      document.getElementById("button-2").className = document.getElementById("button-2").className + " fade-out";
+      document.getElementById("button-3").className = document.getElementById("button-3").className + " fade-in";
+    };
+    document.getElementById("button-3").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-left2";
+      document.getElementById("ed").className = document.getElementById("ed").className + " get-smaller";
+      document.getElementById("lue").className = document.getElementById("lue").className + " get-larger";
+      document.getElementById("step3").className = document.getElementById("step3").className + " text-larger";
+      document.getElementById("step2").className = document.getElementById("step2").className + " text-smaller";
+      document.getElementById("step02").className = document.getElementById("step02").className + " p-smaller";
+      document.getElementById("step03").className = document.getElementById("step03").className + " p-larger";
+      document.getElementById("button-3").className = document.getElementById("button-3").className + " fade-out";
+      document.getElementById("button-4").className = document.getElementById("button-4").className + " fade-in";
+    };
+    document.getElementById("button-4").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-left3";
+      document.getElementById("lue").className = document.getElementById("lue").className + " get-smaller";
+      document.getElementById("rown").className = document.getElementById("rown").className + " get-larger";
+      document.getElementById("step4").className = document.getElementById("step4").className + " text-larger";
+      document.getElementById("step3").className = document.getElementById("step3").className + " text-smaller";
+      document.getElementById("step03").className = document.getElementById("step03").className + " p-smaller";
+      document.getElementById("step04").className = document.getElementById("step04").className + " p-larger";
+      document.getElementById("button-4").className = document.getElementById("button-4").className + " fade-out";
+      document.getElementById("button-5").className = document.getElementById("button-5").className + " fade-in";
+      document.getElementById("ps4").className = document.getElementById("ps4").className + " ps4-fade-in";
+    };
+    document.getElementById("button-01").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-up1";
+      document.getElementById("step1").className = document.getElementById("step1").className + " text-larger";
+      document.getElementById("step01").className = document.getElementById("step01").className + " p-larger";
+      document.getElementById("button-02").className = document.getElementById("button-02").className + " fade-in";
+    }
+    document.getElementById("button-02").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-up2";
+      document.getElementById("step2").className = document.getElementById("step1").className + " text-larger";
+      document.getElementById("step02").className = document.getElementById("step01").className + " p-larger";
+      document.getElementById("button-03").className = document.getElementById("button-02").className + " fade-in";
+    }
+    document.getElementById("button-03").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-up3";
+      document.getElementById("step3").className = document.getElementById("step3").className + " text-larger";
+      document.getElementById("step03").className = document.getElementById("step03").className + " p-larger";
+      document.getElementById("button-04").className = document.getElementById("button-04").className + " fade-in";
+    }
+    document.getElementById("button-04").onclick = function() {
+      document.getElementById("Container").className = document.getElementById("Container").className + " move-up4";
+      document.getElementById("step4").className = document.getElementById("step4").className + " text-larger";
+      document.getElementById("step04").className = document.getElementById("step04").className + " p-larger";
+      document.getElementById("button-05").className = document.getElementById("button-05").className + " fade-in";
+    }
+  </script>
+
+    </body>
+</html>
