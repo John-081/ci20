@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <title>john_luo_menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Lacquer|Nunito&display=swap" rel="stylesheet">
+    <style media="screen">
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 5vw;
+      }
+      h1 {
+        margin: 0;
+        font-family: 'Lacquer', sans-serif;
+      }
+      h2, h3, h4 {
+        font-family: 'Nunito', sans-serif;
+        margin: 0;
+      }
+      h4 {
+        opacity: .7;
+      }
+      body, html {
+        margin: 2vw;
+      }
+      div {
+        margin: 0;
+      }
+      /* .left {
+        background-color: brown;
+      }
+      .right {
+        background-color: grey;
+      } */
+      .left, .right {
+        height: 900px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        font-family: 'Lacquer', sans-serif;
+        font-weight: bold;
+        opacity: .4;
+      }
+      span {
+        margin: 2rem;
+      }
+
+      @media only screen and (max-width: 500px) {
+        .left, .right {
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          height: 400px;
+      }
+      p {
+        font-size: .2vw;
+        margin-top: 3vw;
+      }
+      h1 {
+        font-size: 7vw;
+        margin-right: 2vw;
+      }
+      h2 {
+        font-size: 4vw;
+        font-weight: bold;
+      }
+      h3 {
+        font-size: 4vw;
+        line-height: 1vw;
+      }
+      h4 {
+        font-size: 1vw;
+        line-height: .5vw;
+      }
+      span {
+        margin: 1.3rem;
+      }
+
+    }
+      @media only screen and (min-width: 501px) and (max-width: 999px) {
+        .container {
+          margin-bottom: 8vw;
+        }
+        .left, .right {
+          height: 650px;
+          box-sizing: border-box;
+          float: left;
+        }
+        .left {
+          border-right: .05vw solid black;
+        }
+        .right {
+          border-left: .05vw black;
+        }
+        P {
+          margin-top: 4vw;
+        }
+        h1 {
+          font-size: 6vw;
+        }
+        h2 {
+          font-size: 2.5vw;
+          font-weight: bold;
+        }
+        h3 {
+          font-size: 2.2vw;
+        }
+        h4 {
+          font-size: 2vw;
+          line-height: 1vw;
+        }
+        span {
+          margin: 1.8rem;
+        }
+      }
+      @media only screen and (min-width: 1000px) {
+        .container {
+          margin-bottom: 6vw;
+        }
+        .left, .right {
+          height: 500px;
+          box-sizing: border-box;
+          float: left;
+        }
+        .left {
+          border-right: .05vw solid black;
+          border-left: .2vw solid black;
+        }
+        .right {
+          border-left: .05vw solid black;
+          border-right: .2vw solid black;
+        }
+        body {
+          margin-top: 0;
+        }
+        p {
+          font-size: 1vw;
+          margin-top: 3vw;
+        }
+        h1 {
+          font-size: 4vw;
+        }
+        h4 {
+          line-height: .5vw;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>J's milk</h1>
+      <p>CLOCK</p>
+      <p>WORK</p>
+      <p>ORANGE</p>
+      <p>ULTRA</p>
+      <p>VIOLENCE</p>
+
+
+    </div>
+      <div class="left">
+        <span><h2>WHITE KNIVES</h2></span>
+        <span><h3>1. The Moloko Plus</h3></span>
+        <span><h4>Whole Milk</h4></span>
+        <span><h4>Barbiturates</h4></span>
+        <span><h3>2. Vellocet</h3></span>
+        <span><h4>Whole Milk</h4></span>
+        <span><h4>Amphetamine</h4></span>
+      </div>
+      <div class="right">
+        <span><h2>CARPE DIEM</h2></span>
+        <span><h3>1. Synthemesc</h3></span>
+        <span><h4>Skim Milk</h4></span>
+        <span><h4>Synthetic mescaline</h4></span>
+        <span><h3>2. Drencrom</h3></span>
+        <span><h4>Skim Milk</h4></span>
+        <span><h4>Adrenochrome</h4></span>
+      </div>
+  </body>
+
+</html>
