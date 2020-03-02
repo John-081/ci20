@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <title>dom-level-1</title>
+<style media="screen">
+<!-- selectors   -->
+h1: nth-child(2) {};
+.headers {};
+</style>
+<body>
+  <nav></nav>
+  <h1 id="title" class="headers">The history of 80's rom coms</h1>
+</body>
+
+<script>
+
+//part1 capturing elements
+//three ways of doing similar job
+var header = document.getElementById("title");
+console.log(header);
+header.style.color = "red";
+
+
+document.querySelector("#title").style.color =  "green";
+
+
+var headers = document.querySelectorAll(".headers");//if you put "h1", it is going to select all the h1
+console.log(headers);
+headers[0].style.color = "purple";//header[0] is array
+
+
+
+//part2 creating elements
+var h1 = document.createElement("h1");//step 1 creating elements
+h1.innerHTML = "The history of 80's rom coms";//step 2 style it
+console.log(h1);
+document.body.appendChild(h1);//step 3 append it to the page
+
+var text = document.createElement("h3");//this can be h1, h2, p, etc.
+text.innerHTML = "hello";
+document.querySelector("nav").appendChild(text);
+
+</script>

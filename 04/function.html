@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <title>function</title>
+
+<body>
+
+</body>
+
+<script>
+
+//this code does not run immediately, only when we tell it to
+function randomInteger() {
+  //this is the code inside the function
+  var number = Math.floor(Math.random() * 256);//random does not include 1 so  *255 will never be 255
+  console.log(number);
+}
+
+document.body.style.backgroundColor = "rgb(0, 0, 0)";
+
+randomInteger();
+randomInteger();
+randomInteger();
+randomInteger();
+
+Math.random(); //this TURNS INTO a number (num)
+
+//Q: how do we turn our function INTO a number?
+//A: "return"
+function randomInteger2() {
+  var number = Math.floor(Math.random() * 256);
+  console.log(number);
+  return number;
+}
+var p = randomInteger2();
+console.log("this one --->", p);
+
+document.body.style.backgroundColor = "rgb(" + randomInteger2() + ", 0, " + randomInteger2() + ")";
+
+// function randomInteger3() {
+//   var number = Math.floor(Math.random() * 256);
+//   console.log(number);
+//   //return number;
+// }
+// var v = randomInteger3();
+// console.log("that one --->", v);
+
+
+</script>

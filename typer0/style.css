@@ -1,0 +1,109 @@
+@font-face {
+font-family: 'D-DIN Regular';
+font-style: normal;
+font-weight: normal;
+src: local('D-DIN Regular'), url('D-DIN.woff') format('woff');
+}
+html {
+  margin:0;
+}
+body {
+  background-color: black;
+  font-family: 'D-DIN Regular';
+  font-size: 10px;
+  line-height: 1em;
+  color: white;
+  margin: 0;
+}
+
+p {
+  font-family: 'D-DIN Regular';
+  font-size: 20px;
+  line-height: 1em;
+  color: white;
+}
+h4 {
+  font-family: 'D-DIN Regular';
+  font-size: 15px;
+  line-height: 1em;
+  color: white;
+  writing-mode: tb-rl;
+  margin-left: 90%;
+  margin-top: -20vw;
+  position: absolute;
+}
+span1 {
+  opacity: 0;
+}
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.show {
+  animation: Show 2s 1s;
+  animation-fill-mode: forwards;
+}
+.show2 {
+  animation: Show2 2s 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes Show {
+  0% {opacity: 0;}
+  100% {opacity: .5;}
+}
+@keyframes Show2 {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#t02, #t03, #t04, #t05, #t06{
+  /* opacity: 0; */
+}
+#t01 {
+  opacity: .5;
+}
+
+#sub01 {
+  opacity: 0;
+  background-color:black;
+  width: 100%;
+  word-wrap: break-word;
+  text-align: center;
+  margin-top: 20vw;
+}
+#sub02 {
+  opacity: 0;
+  background-color:black;
+  width: 100%;
+  word-wrap: break-word;
+  text-align: center;
+}
+#cursor {
+  animation: blinker 1s step-end infinite;
+  /*you can change 'step-end' to 'linear' for smooth transition*/
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+/* #cursor2 {
+  animation: blinker 1s step-end infinite;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+  visibility: hidden;
+} */
+
+
+#container {
+  margin-top: 20vw;
+  background-color:black;
+  width: 50%;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+#c01, #c02, #c03, #c04, #c05, #c06, #c07, #c08, #c09{
+  opacity: 0;
+}
+
+#square {
+  visibility: hidden;
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <title>Typer Template</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="start">
+  <div id="container0">
+    <h1>人間失格</h1>
+  </div>
+  <div id="container1">
+    <h2>NO LONGER HUMAN</h2>
+    <div id="click">
+      <p onClick="clickStart()">CLICK TO START</p>
+    </div>
+  </div>
+</div>
+
+<div id="container">
+  <video id="myVideo" width="320px">
+    <source src="amazarashi3.mp4" type="video/mp4">
+  </video>
+  <p id="text">
+  <span id="cursor">|</span>
+  <span id="t01">The weak fear happiness itself. They can harm themselves on cotton wool. Sometimes they are wounded even by happiness. Now I have neither happiness nor unhappiness.</span>
+</p>
+<p id="t02">Everything passes.</p>
+<p id="t03">- Osamu Dazai</p>
+</div>
+
+<h4 id="text2">
+<span id="c01">弱</span>
+<span id="c02">い</span>
+<span id="c03">恐</span>
+<span id="c04">怖</span>
+<span id="c05">の</span>
+<span id="c06">幸</span>
+<span id="c07">福</span>
+<span id="c08">自</span>
+<span id="c09">体</span>
+<span id="c10">。</span>
+<br>
+<span id="c11">彼</span>
+<span id="c12">ら</span>
+<span id="c13">は</span>
+<span id="c14">綿</span>
+<span id="c15">毛</span>
+<span id="c16">で</span>
+<span id="c17">自</span>
+<span id="c18">分</span>
+<span id="c19">自</span>
+<span id="c20">身</span>
+<span id="c21">を</span>
+<span id="c22">害</span>
+<span id="c23">す</span>
+<span id="c24">る</span>
+<span id="c25">こ</span>
+<span id="c26">と</span>
+<span id="c27">が</span>
+<span id="c28">で</span>
+<span id="c29">き</span>
+<span id="c30">ま</span>
+<span id="c31">す</span>
+<span id="c32">。 </span>
+<br>
+<span id="c33">時</span>
+<span id="c34">々</span>
+<span id="c35">彼</span>
+<span id="c36">ら</span>
+<span id="c37">は</span>
+<span id="c38">幸</span>
+<span id="c39">福</span>
+<span id="c40">に</span>
+<span id="c41">よ</span>
+<span id="c42">っ</span>
+<span id="c43">て</span>
+<span id="c44">傷</span>
+<span id="c45">つ</span>
+<span id="c46">く</span>
+<span id="c47">。</span>
+<br>
+<span id="c48">今</span>
+<span id="c49">私</span>
+<span id="c50">は</span>
+<span id="c51">幸</span>
+<span id="c52">福</span>
+<span id="c53">も</span>
+<span id="c54">不</span>
+<span id="c55">幸</span>
+<span id="c56">も</span>
+<span id="c57">あ</span>
+<span id="c58">り</span>
+<span id="c59">ま</span>
+<span id="c60">せ</span>
+<span id="c61">ん</span>
+<span id="c62">。</span>
+
+<span id="c63"> ———— &nbsp太宰治</span>
+
+</h4>
+
+<h4 id="square">
+  □□□□□□□□□<br>
+  □□□□□□□□□□□□□□□□□□□□□<br>
+  □□□□□□□□□□□□□□<br>
+  □□□□□□□□□□□□□□
+</h4>
+
+<div id="sub01">
+  <p> You are dead </p>
+</div>
+<div id="sub02">
+<p onClick="window.location.reload();">RESTART?</p>
+</div>
+
+<script type="text/javascript">
+var entryCount = 0;
+var displayCount = 0;
+var str = "The weak fear happiness itself. They can harm themselves on cotton wool. Sometimes they are wounded even by happiness. Now I have neither happiness nor unhappiness. Everything passes.";
+var video = document.getElementById("myVideo");
+
+function playVid() {
+  video.play();
+}
+function pauseVid() {
+  video.pause();
+}
+
+function createLetter(key) {
+  entryCount += 1;
+  displayCount += 1;
+  var span = document.createElement("span");
+   span.innerHTML = key;
+   cursor.parentNode.insertBefore(span, cursor);
+  var char = str.charAt(entryCount - 1);
+
+
+  if (key == char) {
+      var string  = document.getElementById("t01").innerHTML;
+      document.getElementById("t01").innerHTML = string.slice(1);
+  }
+  else {
+    video.pause();
+    var res = str.replace("The weak fear happiness itself. They can harm themselves on cotton wool. Sometimes they are wounded even by happiness. Now I have neither happiness nor unhappiness. Everything passes.",
+    "&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633&#9633");
+    document.getElementById("text2").style.visibility = "hidden";
+    document.getElementById("square").style.visibility = "visible";
+    document.getElementById("text").innerHTML = res;
+    document.getElementById("sub01").className = document.getElementById("sub01").className + " show";
+    document.getElementById("sub02").className = document.getElementById("sub02").className + " show2";
+  }
+
+  if (entryCount == 1){
+    video.play();
+  }
+  if (entryCount == 3){
+    document.getElementById("c01").style.opacity = "1";
+  }
+  if (entryCount == 4){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker3";
+  }
+  if (entryCount == 6){
+    document.getElementById("c02").style.opacity = "1";
+  }
+  if (entryCount == 9){
+    document.getElementById("c03").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker4";
+  }
+  if (entryCount == 12){
+    document.getElementById("c04").style.opacity = "1";
+  }
+  if (entryCount == 14){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker5";
+  }
+  if (entryCount == 15){
+    document.getElementById("c05").style.opacity = "1";
+  }
+  if (entryCount == 18){
+     document.getElementById("c06").style.opacity = "1";
+  }
+  if (entryCount == 21){
+     document.getElementById("c07").style.opacity = "1";
+  }
+  if (entryCount == 24){
+    video.pause();
+     document.getElementById("c08").style.opacity = "1";
+  }
+  if (entryCount == 30){
+     document.getElementById("c09").style.opacity = "1";
+  }
+  if (entryCount == 31){
+     document.getElementById("c10").style.opacity = "1";
+  }
+  if (entryCount == 32){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker6";
+  }
+  if (entryCount == 33){
+    video.play();
+     document.getElementById("c11").style.opacity = "1";
+  }
+  if (entryCount == 35){
+     document.getElementById("c12").style.opacity = "1";
+  }
+  if (entryCount == 37){
+     document.getElementById("c13").style.opacity = "1";
+     document.getElementById("t01").className = document.getElementById("t01").className + " blinker7";
+  }
+  if (entryCount == 38){
+     document.getElementById("c14").style.opacity = "1";
+  }
+  if (entryCount == 41){
+    document.getElementById("c15").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker8";
+  }
+  if (entryCount == 42){
+     document.getElementById("c16").style.opacity = "1";
+  }
+  if (entryCount == 44){
+    document.getElementById("c17").style.opacity = "1";
+  }
+  if (entryCount == 46){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker9";
+  }
+  if (entryCount == 47){
+    document.getElementById("c18").style.opacity = "1";
+  }
+  if (entryCount == 49){
+    document.getElementById("c19").style.opacity = "1";
+  }
+  if (entryCount == 51){
+    document.getElementById("c20").style.opacity = "1";
+  }
+  if (entryCount == 53){
+    document.getElementById("c21").style.opacity = "1";
+  }
+  if (entryCount == 55){
+    document.getElementById("c22").style.opacity = "1";
+  }
+  if (entryCount == 57){
+    document.getElementById("c23").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker10";
+  }
+  if (entryCount == 59){
+    document.getElementById("c24").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker11";
+  }
+  if (entryCount == 61){
+    document.getElementById("c25").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker11";
+  }
+  if (entryCount == 63){
+    document.getElementById("c26").style.opacity = "1";
+  }
+  if (entryCount == 65){
+    document.getElementById("c27").style.opacity = "1";
+  }
+  if (entryCount == 67){
+    document.getElementById("c28").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker12";
+  }
+  if (entryCount == 68){
+    document.getElementById("c29").style.opacity = "1";
+  }
+  if (entryCount == 69){
+    video.pause();
+    document.getElementById("c30").style.opacity = "1";
+  }
+  if (entryCount == 71){
+    document.getElementById("c31").style.opacity = "1";
+  }
+  if (entryCount == 72){
+    document.getElementById("c32").style.opacity = "1";
+  }
+  if (entryCount == 73){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker13";
+  }
+  if (entryCount == 74){
+    video.play();
+    document.getElementById("c33").style.opacity = "1";
+  }
+  if (entryCount == 77){
+    document.getElementById("c34").style.opacity = "1";
+  }
+  if (entryCount == 80){
+    document.getElementById("c35").style.opacity = "1";
+  }
+  if (entryCount == 83){
+    document.getElementById("c36").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker14";
+  }
+  if (entryCount == 86){
+    document.getElementById("c37").style.opacity = "1";
+  }
+  if (entryCount == 88){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker15";
+  }
+  if (entryCount == 89){
+    document.getElementById("c38").style.opacity = "1";
+  }
+  if (entryCount == 92){
+    document.getElementById("c39").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker16";
+  }
+  if (entryCount == 95){
+    document.getElementById("c40").style.opacity = "1";
+  }
+  if (entryCount == 98){
+    document.getElementById("c41").style.opacity = "1";
+  }
+  if (entryCount == 100){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker17";
+  }
+  if (entryCount == 101){
+    document.getElementById("c42").style.opacity = "1";
+  }
+  if (entryCount == 104){
+    document.getElementById("c43").style.opacity = "1";
+  }
+  if (entryCount == 105){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker18";
+  }
+  if (entryCount == 107){
+    document.getElementById("c44").style.opacity = "1";
+  }
+  if (entryCount == 108){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker19";
+  }
+  if (entryCount == 110){
+    video.pause();
+    document.getElementById("c45").style.opacity = "1";
+  }
+  if (entryCount == 113){
+    document.getElementById("c46").style.opacity = "1";
+  }
+  if (entryCount == 118){
+    document.getElementById("c47").style.opacity = "1";
+  }
+  if (entryCount == 119){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker20";
+  }
+  if (entryCount == 120){
+    video.play();
+    document.getElementById("c48").style.opacity = "1";
+  }
+  if (entryCount == 123){
+    document.getElementById("c49").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker21";
+  }
+  if (entryCount == 125){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker22";
+  }
+  if (entryCount == 126){
+    document.getElementById("c50").style.opacity = "1";
+  }
+  if (entryCount == 129){
+    document.getElementById("c51").style.opacity = "1";
+  }
+  if (entryCount == 130){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker23";
+  }
+  if (entryCount == 132){
+    document.getElementById("c52").style.opacity = "1";
+  }
+  if (entryCount == 135){
+    document.getElementById("c53").style.opacity = "1";
+  }
+  if (entryCount == 138){
+    document.getElementById("c54").style.opacity = "1";
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker24";
+  }
+  if (entryCount == 141){
+    document.getElementById("c55").style.opacity = "1";
+  }
+  if (entryCount == 144){
+    document.getElementById("c56").style.opacity = "1";
+  }
+  if (entryCount == 147){
+    document.getElementById("c57").style.opacity = "1";
+  }
+  if (entryCount == 148){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker25";
+  }
+  if (entryCount == 150){
+    document.getElementById("c58").style.opacity = "1";
+  }
+  if (entryCount == 152){
+    document.getElementById("t01").className = document.getElementById("t01").className + " blinker26";
+  }
+  if (entryCount == 153){
+    document.getElementById("c59").style.opacity = "1";
+  }
+  if (entryCount == 156){
+    document.getElementById("c60").style.opacity = "1";
+  }
+  if (entryCount == 159){
+    document.getElementById("c61").style.opacity = "1";
+  }
+  if (entryCount == 164){
+    document.getElementById("c62").style.opacity = "1";
+    document.getElementById("t02").className = document.getElementById("t02").className + " show3";
+    document.getElementById("t03").className = document.getElementById("t03").className + " show5";
+    document.getElementById("c63").className = document.getElementById("c63").className + " show4";
+  }
+}
+
+document.onkeydown = function(e) {
+  if (e.keyCode == 8) {
+    deleteElement();
+  }
+  if (e.key == " ") {
+    createLetter(" ");
+  }
+  if (e.key == ".") {
+    createLetter(".");
+  }
+
+  if ("abcdefghijklmnopqrstuvwxyz".includes(e.key.toLowerCase())) {
+    createLetter(e.key);
+  }
+  console.log("entry #" + entryCount + " : " + e.keyCode + " | " + e.key + ". Showing " + displayCount);
+}
+
+function clickStart() {
+  document.getElementById("t01").className = document.getElementById("t01").className + " blinker2";
+  document.getElementById("start").style.display = "none";
+  document.getElementById("container").style.visibility = "visible";
+  document.getElementById("sub01").style.visibility = "visible";
+  document.getElementById("sub02").style.visibility = "visible";
+  document.getElementById("text2").style.visibility = "visible";
+}
+</script>
+</body>
+</html>

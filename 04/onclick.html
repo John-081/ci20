@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <title>onclick</title>
+<body>
+  <button id="hello-button">click me</button>
+</body>
+
+<script>
+
+//SELECT the hello-button
+//var thing = function() {}; we can store functions into variables
+document.querySelector("#hello-button").onclick = function() {
+  //create an element that this going to say hello on the screen
+  var hello = document.createElement("h3");//this can be h1, h2, p, etc.
+  hello.innerHTML = "hello";
+  document.body.appendChild(hello);
+  //body can be replaced by querySelector("body")
+}
+
+
+</script>

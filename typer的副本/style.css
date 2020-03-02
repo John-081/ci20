@@ -1,0 +1,56 @@
+@font-face {
+font-family: 'D-DIN Regular';
+font-style: normal;
+font-weight: normal;
+src: local('D-DIN Regular'), url('D-DIN.woff') format('woff');
+}
+
+body {
+  background-color: black;
+  font-family: 'D-DIN Regular';
+  font-size: 10px;
+  line-height: 1em;
+  color: white;
+}
+
+p {
+  font-family: 'D-DIN Regular';
+  font-size: 10px;
+  line-height: 1em;
+  color: white;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
+.show {
+  animation: Show 2s 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes Show {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+#text {
+  opacity: .5;
+}
+#sub01 {
+  opacity: 0;
+}
+#cursor {
+  animation: blinker 1s step-end infinite;
+  /*you can change 'step-end' to 'linear' for smooth transition*/
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+
+#container {
+  background-color:black;
+  width: calc(100% - 100px);
+  padding: 50px;
+  margin: 50px auto;
+  word-wrap: break-word;
+  text-align: center;
+}

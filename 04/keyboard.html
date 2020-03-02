@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <title>keyboard</title>
+
+<body>
+  <p id="text"></p>
+</body>
+
+
+
+<script>
+
+document.onkeypress = function(event) {
+  document.querySelector("#text").innerHTML = document.querySelector("#text").innerHTML + event.key;
+  console.log("key press", event);
+    // a lot of the meta keys dont work
+};
+
+document.onkeydown = function(event) {
+  //this will make meta key show on the screen
+  // document.querySelector("#text").innerHTML = document.querySelector("#text").innerHTML + event.key;
+  // everything key press gets and more
+  console.log("key down", event);
+};
+
+document.onkeyup = function(event) {
+  console.log("key up", event);
+};
+
+//keyCode is a nother key inside of event, where everything has a number
+
+</script>

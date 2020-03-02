@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<title>numbers</title>
+<script>
+
+console.log("hello");
+
+//combining two codes in one
+//1. create the variable
+//2. set the contents
+var num = 5;
+
+console.log(num);
+// we can do match on this variable
+console.log(num + 10);
+//+ - * /
+console.log(num);
+
+
+//the num is redefined as 5 to 13
+num = 13;
+console.log(num);
+//we did not type "var"
+//var creates the space in memory; that's why we only type "var" once
+num = num +  5;
+console.log(num);
+//this redefined(STORE) num = 18 into memory. 13 is overwritten.
+//1. do everything to the RIGHT of the equal sign.
+//2.do the equal sign
+
+
+var large = Infinity;
+var lowest = -Infinity;
+var impossible = 0 / 0;
+var fraction = 5 / 0;
+
+console.log(large, lowest, impossible, fraction);
+
+//key difference between integers (整数) and decimal numbers
+
+//"decimal" in computing: "floats" 和float：left没关系
+
+//to convert a "foat" in to a int
+var whole = Math.floor(3.1415);
+var whole2 = Math.ceil(3.1415);
+var whole3 = Math.floor(-3.1415);
+var whole4 = Math.ceil(-3.1415);
+console.log(whole, whole2, whole3, whole4);
+console.log(Math.PI);//圆周率
+
+var random = Math.random(3);
+console.log(random);
+console.log(random);
+console.log(random);
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+console.log(getRandomInt(-10));
+//get interger lower than 10, larger than 0  (exclude 0);
+
+
+
+
+
+</script>
