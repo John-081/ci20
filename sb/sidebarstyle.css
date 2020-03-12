@@ -1,0 +1,24 @@
+div {
+}
+body {
+ display: flex;
+ flex-direction: row;
+}
+.sidebar {
+  flex: 0 0 150px;
+  background-color: grey;
+  line-height: 5em;
+  padding-left: 1em;
+  text-transform: uppercase;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+.content {
+  flex: 1;
+  border: 1px solid black;
+}
+a {
+  color: white;
+}
