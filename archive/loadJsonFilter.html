@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+
+
+
+    //for the fetch to work we need a server
+    fetch("data.json")
+      .then(function(blob){ return blob.json(); })
+      .then(function(json){ buildPage(json); });
+
+    function buildPage(data) {
+      // console.log(data);
+
+      // for (var i = 0; i < data.length; i = i + 1){
+      //   console.log(data[i]);
+      // }
+
+      //filter is asking for a true or false
+      //for each item we generate a true or false
+      //"entry" is an object
+      //entry is each object inside the data
+      var bird = data.filter(function(entry){ return entry.Species == "Bird"; });
+      console.log(bird);
+      //"data" is unaffected. the new array "Species" is a copy
+
+
+    // for (var i = 0; i < data.length; i = i + 1){
+    //   var img = document.createElement("img")
+    //   img.src = data[i].link;
+    //   var span = docment.createElement("span");
+    //   span.innerHTML = data[i].caption
+    //   document.body.appendChild(img);
+    // }
+  }
+    // function showByColor(color) {
+    //   // if color = "blue"
+    //   var filtered = data.filter(function(entry){ return entry.Color.includes(color); })
+    // }
+
+  </script>
+  </body>
+
+</html>

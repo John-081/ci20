@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="file" name="" value="">
+  </body>
+
+  <script type="text/javascript">
+
+
+//this is function that gets called by the browser
+document.querySelectorAll("input")[0].onchange = function(event){
+  // this bit of code opens the file and converts it into a string
+
+  var file = event.target.files[0];
+  var reader = new FileReader();
+  reader.readAsText(file, "UTF-8");
+  reader.onload = function(readerEvent){
+    didLoad(readerEvent.target.result);
+  }
+};
+
+//the file has finished loading, as is converted into one string
+function didLoad(text) {
+  // console.log(text);
+  //split the string at the newlines
+  var lines = text.split(/\r\n|\n/);
+  //lines is an array of strings
+  console.log(lines);
+
+  //first lets process the categories
+  var header = lines[0].split(",");
+  // console.log(header);
+
+
+  var json = [];
+  for (var i = 1; i < lines.length; i = i + 1){
+    var row = lines[i].split(",");
+    var object = {};
+    // a second loop loops over the entries in the arrray
+    //and puts them into this object
+    for (var j = 0; j < row.length; j = j + 1){
+      var key = header[j];
+      object[key] = row[j];
+    }
+    //the object is now filled up with the contents of the row
+    json.push(object);
+  }
+  // an array of objects
+  console.log(json);
+  download(json, "data.json");
+};
+
+function download (data, filename){
+  var a = document.createElement("a");
+  var blob = new window.Blob([JSON.stringify(data)], {type:"text/plain"});
+  a.setAttribute("href", window.URL.createObjectURL(blob));
+  a.setAttribute("download", filename);
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+  </script>
+</html>

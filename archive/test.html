@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>text loop test</title>
+    <style media="screen">
+    .menu{
+      animation: show 10s forwards;
+      opacity:0;
+    }
+    h1,h2 {
+      float: right;
+    }
+    h1 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: black;
+      animation: show2 2.5s forwards;
+      opacity:0;
+      display: inline;
+      margin:0;
+      font-size: 5em;
+    }
+    h2 {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: black;
+      animation: show2 2.5s forwards;
+      animation-delay: 2.5s;
+      opacity:0;
+      margin: 0;
+      font-size: .5em;
+      display: inline;
+    }
+    div {
+      float: left;
+    }
+    .container0{
+      float: right;
+      width:500px;
+      /* background-color:red; */
+    }
+    .container1{
+      width:22px;
+      margin-right:0;
+    }
+    .container2{
+      width:22px;
+      margin-left: 22px;
+    }
+    .group1{
+      width:44px;
+      margin:0px;
+    }
+    .group2{
+      width:44px;
+      margin-left:44px;
+    }
+    .group3{
+      width:44px;
+      margin-left:88px;
+    }
+    .group4{
+      width:44px;
+      margin-left:132px;
+    }
+    .group5{
+      width:44px;
+      margin-left:176px;
+    }
+    .group6{
+      width:44px;
+      margin-left:220px;
+    }
+      .marquee {
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        position: absolute;
+        height: 99%;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      .marquee span {
+        display: inline-block;
+        animation: marquee 10s linear infinite;
+      }
+
+      .marquee2 span {
+        animation-delay: 5s;
+        /* color: red; */
+      }
+
+      .marquee3 span {
+        display: inline-block;
+        animation: marquee2 10s linear infinite;
+      }
+
+      .marquee4 span {
+        animation: marquee2 10s linear infinite;
+        animation-delay: 5s;
+        /* color: red; */
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translate(0, -100%);
+        }
+        100% {
+          transform: translate(0, 100%);
+        }
+      }
+      @keyframes marquee2 {
+        0% {
+          transform: translate(0, 100%);
+        }
+        100% {
+          transform: translate(0, -100%);
+        }
+      }
+      @keyframes show {
+        0% {
+          opacity:0;
+        }
+        50% {
+          opacity:0;
+        }
+        100%{
+          opacity:1;
+        }
+      }
+      @keyframes show2 {
+        0% {
+          opacity:0;
+        }
+        100%{
+          opacity:1;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="group1">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+      <div class="group2">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+      <div class="group3">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+      <div class="group4">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+      <div class="group5">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+      <div class="group6">
+        <div class="container1">
+          <p class="marquee">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee2">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+        <div class="container2">
+          <p class="marquee marquee3">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+          <p class="marquee marquee4">
+            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container0">
+      <h1>异兽百集</h1>
+      <h2>COLLECTION OF A HUNDRED MONSTERS</h2>
+    </div>
+  </body>
+</html>

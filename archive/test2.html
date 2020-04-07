@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test vertical</title>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 1.1em;
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
+
+.container {
+  background: #6b87f3;
+  color: #ffffff;
+  padding: 2em;
+  margin: 40px auto 0;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+}
+
+h1 {
+  color: #4b13d8;
+  font-family: 'Bungee Shade', cursive;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-feature-settings: "vkrn", "vpal";
+}
+
+p {
+  margin: 0;
+  letter-spacing: 1px;
+  width: 200px;
+}
+.verticaltext {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+.mixed {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Steve Jobs</h1>
+      <p>
+        <span class="mixed">这是中文English</span>
+      </p>
+    </div>
+  </body>
+</html>

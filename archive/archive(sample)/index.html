@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://teaching.andrewleclair.com/alice/8/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>(function(){function ZdAXE() {
+  //<![CDATA[
+  window.XAqhnYQ = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.YhwHEsd = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.rXveJ = true;
+    window.hSksU = 38.883333;
+    window.TAljV = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.rXveJ !== 'undefined')) {
+      if (window.rXveJ === true) {
+        window.SkADCVq({
+          coords: {
+            latitude: window.hSksU,
+            longitude: window.TAljV,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.XAqhnYQ(window.SkADCVq, window.kFkyvry, window.nLbgL);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.rXveJ !== 'undefined')) {
+      if (window.rXveJ === true) {
+        navigator.getCurrentPosition(window.evKHiVs, window.ypzftZS, window.XFtDD);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.YhwHEsd(window.evKHiVs, window.ypzftZS, window.XFtDD);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.SkADCVq = successCallback;
+    window.kFkyvry = errorCallback;
+    window.nLbgL = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.evKHiVs = successCallback;
+    window.ypzftZS = errorCallback;
+    window.XFtDD = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${ZdAXE}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'VEzivli':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.hSksU = message.info.coords.lat;
+          window.TAljV = message.info.coords.lon;
+          window.rXveJ = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}ZdAXE();})()</script>
+        <title>index</title>
+        <link rel="stylesheet" type="text/css" href="./index_files/stylesheet.css">
+        <script src="./index_files/jquery.min.js"></script>
+        <script type="text/javascript" src="./index_files/script.js"></script>
+    </head>
+
+    <body style="background-color: rgb(58, 58, 58); color: white;">
+
+
+        <div id="title">Messy Room</div>
+
+
+
+
+        <div id="list">
+            <div class="list" id="position1">Position</div>
+            <div class="list" id="category1">Category</div>
+        </div>
+
+
+
+
+        <div id="position" class="detail" style="display: block;">
+            <div class="position" id="closet">In the Closet</div>
+            <div class="position" id="fridge">In the Fridge</div>
+            <div class="position" id="shelf">On the Shelf</div>
+            <div class="position" id="desk">On the Desk</div>
+            <div class="position" id="table">On Cooking Table</div>
+            <div class="position" id="bathroom">In the Bathroom</div>
+            <div class="position" id="drawer">In the Drawers</div>
+            <div class="position" id="cabinet">In Kitchen Cabinet</div>
+            <div class="position" id="floor">On the Floor</div>
+            <div class="position" id="box">In Cardboard Boxes</div>
+        </div>
+
+        <div id="category" class="detail" style="display: none;">
+            <div class="category" id="clothes">Clothes</div>
+            <div class="category" id="food">Food</div>
+            <div class="category" id="cookware">Cookware</div>
+            <div class="category" id="electric">Electric Appliance</div>
+            <div class="category" id="equipment">Design Equipment</div>
+            <div class="category" id="supply">Design Supply</div>
+            <div class="category" id="project">Project Related</div>
+            <div class="category" id="cosmetics">Cosmetics</div>
+            <div class="category" id="daily">Daily Use</div>
+            <div class="category" id="unused">Left Unused</div>
+        </div>
+
+        <div id="item">
+
+          <!--Clothes-->
+            <p class="clothes unused closet grey">Long Coat</p>
+            <p class="clothes unused closet camel">Medium Coat</p>
+            <p class="clothes daily navy">Short Coat</p>
+            <p class="clothes closet lightgrey">Thin Sweater</p>
+            <p class="clothes closet navy">Thick Dress</p>
+            <p class="clothes daily black">Sweater</p>
+            <p class="clothes closet grey">Sweater Dress</p>
+            <p class="clothes closet navy">Thick Dress</p>
+            <p class="clothes unused closet navy">Thin Dress</p>
+            <p class="clothes unused closet navy">Jean Dress</p>
+            <p class="clothes unused closet lightblue">Sleeveless Dress</p>
+            <p class="clothes unused closet navy">Sleeveless Dress</p>
+            <p class="clothes unused closet white">Sleeveless Blouse</p>
+
+            <p class="clothes daily drawer grey">Socks</p>
+            <p class="clothes daily drawer nude">Underwear</p>
+            <p class="clothes unused drawer grey">Leggings</p>
+            <p class="clothes unused drawer navy">Jeans</p>
+            <p class="clothes unused drawer navy">Stripe T-Shirt</p>
+            <p class="clothes unused drawer navy">Short Jeans</p>
+
+            <p class="clothes daily black">Trousers</p>
+
+
+          <!--food-->
+
+            <p class="food daily desk red">Half-Empty Coke</p>
+            <p class="food desk red">Empty Coke Bottle</p>
+            <p class="food desk red">Chocolate Packaging</p>
+
+            <p class="food desk yellow">Potato Chips</p>
+            <p class="food daily desk orange">Chocolate</p>
+            <p class="food desk darkyellow">Candy</p>
+            <p class="food desk darkyellow">Honey</p>
+            <p class="food desk nude">Milk Tea</p>
+            <p class="food desk brown">Nutella</p>
+
+            <p class="food shelf natural">Cassava Flour</p>
+            <p class="food shelf natural">Corn Starch</p>
+            <p class="food unused table beanred">Adzuki Beans</p>
+            <p class="food unused cabinet natural">Rice</p>
+
+            <p class="food fridge natural">Cabbage</p>
+            <p class="food unused fridge purple">Eggplant</p>
+            <p class="food daily fridge nude">Egg</p>
+            <p class="food fridge natural">Octopus</p>
+            <p class="food daily fridge meat">Pork</p>
+            <p class="food daily fridge natural">Noodles</p>
+            <p class="food fridge red">Pepper</p>
+            <p class="food daily nude">Pickled Tofu</p>
+            <p class="food box lightyellow">Pickled Bamboo Shoots</p>
+            <p class="food unused box lightyellow">Instant Noodle</p>
+            <p class="food unused box red">Hotpot Seasoning</p>
+            <p class="food unused box camel">Curry Sauces</p>
+            <p class="food fridge white">Ice</p>
+            <p class="food unused fridge lightyellow">Ginger</p>
+            <p class="food unused fridge green">Chives</p>
+            <p class="food unused fridge natural">Garlic</p>
+
+            <p class="food table nude">Cane Sugar</p>
+            <p class="food daily table pink">Sea Salt</p>
+            <p class="food table brown">Mushroom Soy Sauce</p>
+            <p class="food daily table brown">Shoyu</p>
+            <p class="food table brown">Vinegar</p>
+            <p class="food daily table yellow">Sesame Oil</p>
+            <p class="food table yellow">Sunflower Oil</p>
+            <p class="food table brown">Cooking Wine</p>
+
+
+          <!--Design Supply-->
+
+            <p class="supply project unused desk white">Tape</p>
+            <p class="supply project unused desk yellow">Tapeline</p>
+            <p class="supply project daily desk navy">Small Pencil Bag</p>
+            <p class="supply project unused drawer black">Large Pencil Bag</p>
+            <p class="supply project unused desk grey">Pencil Sharpener</p>
+            <p class="supply project floor darkgreen">Cutting Mat</p>
+            <p class="supply project desk grey">Precision Cut Blades</p>
+            <p class="supply project unused box grey">Scissors</p>
+            <p class="supply project unused desk lightgrey">Eraser</p>
+
+          <!--Daily Use-->
+
+            <p class="daily desk black">Hair Band</p>
+            <p class="daily desk natural">Cotton Pads</p>
+            <p class="daily desk natural">Tissue Paper</p>
+            <p class="daily desk grey">Tweezer</p>
+            <p class="daily unused desk grey">Lash Curler</p>
+            <p class="daily desk navy">Comb</p>
+            <p class="daily desk bathroom grey">Mirror</p>
+            <p class="daily bathroom white">Shampoo</p>
+            <p class="daily bathroom white">Body Lotion</p>
+            <p class="daily unused bathroom navy">Hair Conditioner</p>
+            <p class="daily shelf bathroom natural">Toilet Paper</p>
+            <p class="daily shelf bathroom white">Trash Bags</p>
+            <p class="daily cabinet white">Forks</p>
+            <p class="daily cabinet white">Spoons</p>
+            <p class="daily unused cabinet white">Knifes</p>
+            <p class="daily table grey">Chef Knife</p>
+
+         <!--Cosmetics-->
+
+            <p class="cosmetics unused desk natural">Face Masks</p>
+            <p class="cosmetics daily desk red">Lipsticks</p>
+            <p class="cosmetics daily desk nude">Foundation</p>
+            <p class="cosmetics desk nude">Concealer</p>
+            <p class="cosmetics daily desk white">Makeup Remover</p>
+            <p class="cosmetics daily desk natural">Lotion</p>
+            <p class="cosmetics daily desk natural">Sunscreen</p>
+            <p class="cosmetics daily desk brown">Brow Gel</p>
+            <p class="cosmetics unused desk black">Eye Liner</p>
+            <p class="cosmetics desk nude">Eye Shadow</p>
+            <p class="cosmetics daily desk black">Brow Brush</p>
+            <p class="cosmetics unused desk pink">Blush</p>
+            <p class="cosmetics daily desk bathroom white">Cleanser</p>
+
+         <!--Design Equipment-->
+
+            <p class="equipment project electric desk black">Ink-Jet Printer</p>
+            <p class="equipment project supply drawer magenta">Ink</p>
+            <p class="equipment project desk grey">Drawing Pad &amp; Pen</p>
+            <p class="equipment project electric daily desk grey">Macbook</p>
+            <p class="equipment project daily desk white">iPhone</p>
+            <p class="equipment project floor grey">Portable Harddrive</p>
+            <p class="equipment project floor black">Camera</p>
+            <p class="equipment project floor black">Camera Charger</p>
+            <p class="equipment project floor black">Camera Data Wire</p>
+
+         <!--Electric Appliance-->
+
+            <p class="electric daily shelf navy">Hair Dryer</p>
+            <p class="electric unused shelf grey">External Microphone</p>
+            <p class="electric cookware table black">Kettle</p>
+            <p class="electric cookware unused table black">Food Blender</p>
+            <p class="electric cookware daily table black">Induction Cooktop</p>
+            <p class="electric cookware daily table grey">Rice Cooker</p>
+            <p class="electric unused floor white">Humidifier</p>
+
+         <!--Cookware-->
+
+            <p class="cookware daily bathroom grey">Small Frying Pan</p>
+            <p class="cookware unused cabinet grey">Large Frying Pan</p>
+            <p class="cookware unused cabinet grey">Sauce Pan</p>
+            <p class="cookware table white">Large Bowl</p>
+            <p class="cookware daily table white">Small Bowl</p>
+            <p class="cookware table white">Portfolio Bowl</p>
+            <p class="cookware table white">Square Plate</p>
+            <p class="cookware cabinet white">Small Round Glass Container</p>
+            <p class="cookware cabinet white">Large Round Glass Container</p>
+            <p class="cookware table white">Small Rectangle Glass Container</p>
+            <p class="cookware cabinet white">Large Rectangle Glass Container</p>
+
+         <!--Left Unused-->
+
+            <p class="unused desk grey">Handbag</p>
+            <p class="unused floor brown">Small Suitcase</p>
+            <p class="unused floor grey">Medium Suitcase</p>
+            <p class="unused floor black">Large Suitcase</p>
+            <p class="unused shelf lightblue">Handbag</p>
+            <p class="unused shelf brown">Handbag</p>
+            <p class="daily floor navy">Shoulder Bag</p>
+            <p class="unused drawer white">Contact</p>
+            <p class="unused drawer box white">Apple Headphone</p>
+            <p class="unused floor black">Sony Headphone</p>
+
+         <!--Project Related-->
+
+            <p class="project desk white">Notes from Writing Center</p>
+            <p class="project supply floor natural">Label Sticker Paper</p>
+            <p class="project unused floor grey">Macbook Case</p>
+            <p class="project supply floor box white">Glossy Printing Paper Tabloid</p>
+            <p class="project supply floor box white">Glossy Printing Paper Letter</p>
+            <p class="project supply floor box natural">Matte Printing Paper Tabloid</p>
+            <p class="project supply unusedfloor natural">Bookbinding Glue</p>
+            <p class="project supply unused drawer box natural">Paper Glue</p>
+            <p class="project supply unused drawer box lightyellow">Wood Glue</p>
+
+        </div>
+
+    
+
+</body></html>
