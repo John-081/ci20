@@ -12,7 +12,7 @@
 .container {
   width:40%;
   margin-left: 30%;
-  margin-top: 20%;
+  margin-top: 26%;
   margin-bottom: 150px;
 }
 p {
@@ -22,6 +22,7 @@ p {
 h3 {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }
 h2 {
   position: relative;

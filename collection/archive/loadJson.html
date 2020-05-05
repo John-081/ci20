@@ -23,6 +23,13 @@
 
     function buildPage(data) {
       console.log(data);
+      //convert data into string
+      var string = "";
+      for (var i = 0; i < data.length; i = i + 1 ){
+        string = string + data[i].ChineseName + " " + data[i].EnglishName + " ";
+      }
+      //set the content in the span with the string
+      document.getElementById("span").textContent="string";
     }
 
   </script>

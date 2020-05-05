@@ -5,8 +5,8 @@
     <title>text loop test</title>
     <style media="screen">
     .menu{
-      animation: show 10s forwards;
-      opacity:0;
+      animation: show 60s forwards;
+      /* opacity:0; */
     }
     h1,h2 {
       float: right;
@@ -84,24 +84,29 @@
 
       .marquee span {
         display: inline-block;
-        animation: marquee 10s linear infinite;
+        animation: marquee 20s linear infinite;
       }
 
       .marquee2 span {
-        animation-delay: 5s;
-        /* color: red; */
+        animation-delay: 10s;
+        color: blue;
       }
 
       .marquee3 span {
         display: inline-block;
-        animation: marquee2 10s linear infinite;
+        animation: marquee2 20s linear infinite;
       }
 
       .marquee4 span {
-        animation: marquee2 10s linear infinite;
-        animation-delay: 5s;
+        animation: marquee2 20s linear infinite;
+        animation-delay: 10s;
+        color:blue;
+        bottom: 100%;
+
         /* color: red; */
       }
+      /* set a timer for the blue to display none and change to display show after 1/2 seconds of the black*/
+      /* https://stackoverflow.com/questions/56419372/how-to-show-a-div-for-10-seconds-and-hide-it-after */
 
       @keyframes marquee {
         0% {
@@ -119,7 +124,7 @@
           transform: translate(0, -100%);
         }
       }
-      @keyframes show {
+      /* @keyframes show {
         0% {
           opacity:0;
         }
@@ -137,7 +142,7 @@
         100%{
           opacity:1;
         }
-      }
+      } */
 
     </style>
   </head>
@@ -146,108 +151,108 @@
       <div class="group1">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan0">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
       <div class="group2">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
       <div class="group3">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
       <div class="group4">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
       <div class="group5">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
       <div class="group6">
         <div class="container1">
           <p class="marquee">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee2">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
         <div class="container2">
           <p class="marquee marquee3">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
           <p class="marquee marquee4">
-            <span>这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
+            <span id="myspan">这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English这是中文English</span>
           </p>
         </div>
       </div>
@@ -256,5 +261,50 @@
       <h1>异兽百集</h1>
       <h2>COLLECTION OF A HUNDRED MONSTERS</h2>
     </div>
+
+
+    <script type="text/javascript">
+
+
+
+      //for the fetch to work we need a server
+      fetch("data.json")
+        .then(function(blob){ return blob.json(); })
+        .then(function(json){ buildPage(json); });
+
+      function buildPage(data) {
+        console.log(data);
+        //convert data into string
+        var string = "";
+        for (var i = 0; i < data.length; i = i + 1 ){
+          string = string + data[i].ChineseName + " " + data[i].EnglishName + " ";
+        }
+        document.getElementById("myspan").innerHTML=string;
+      }
+      //getElementByClassName replace all of them with string;
+
+
+
+      function buildIndex(data){
+        //for each row of data:
+        for (i = 0; i < data.length; i++){
+          var item = document.createElement("li");
+          item.classList.add('items');
+          item.classList.add(data[i].type);
+          item.classList.add(data[i].color);
+
+          var elem = document.createElement("a");
+          elem.innerText = data[i].name;
+          elem.style.color = data[i].color;
+          elem.href = "#";
+
+          item.appendChild(elem);
+          document.querySelector('.result').appendChild(item);
+        }
+      }
+
+      //keep "li" remove the bullets in css get it display inline when "span" doesnt work
+
+    </script>
   </body>
 </html>
