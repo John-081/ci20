@@ -14,7 +14,7 @@ today = yyyy + mm + dd;
 console.log("Today is " + today);
 
 var xmlhttp = new XMLHttpRequest();
-var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=virus&api-key=B7T9HkbkdrsHWi0pcv6Rhev2R5QSxaAA&begin_date=20120101&end_date=" + today + "&end_date=" + today; //your file name (or, the structured URL for API call)
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=movie&api-key=B7T9HkbkdrsHWi0pcv6Rhev2R5QSxaAA&begin_date=20120101&end_date=" + today; //your file name (or, the structured URL for API call)
 var data = [];
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {

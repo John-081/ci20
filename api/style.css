@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
 
 body {
   font-size: 24px;
   color: #000;
-  width: 600px;
   margin: 0 auto;
+  background: black;
+  text-align: center;
 }
 a {
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: 'DM Serif Text', serif;
 }
 a:hover {
   opacity: 0.5;
@@ -16,4 +21,9 @@ a:hover {
 .articles {
   list-style-type: none;
   margin: 2em 0;
+}
+img {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
